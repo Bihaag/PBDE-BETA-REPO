@@ -1,0 +1,76 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jobs Table</title>
+    <style>
+      /* Style the table */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        background-color: #fff;
+        color: #212529;
+      }
+
+      /* Style the table header */
+      th {
+        font-weight: 600;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 0.75rem;
+        vertical-align: middle;
+      }
+      h1 {
+			text-align: center;
+			margin-top: 50px;
+			color: #555;
+		}
+
+      form {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+      /* Style the table rows */
+      tr {
+        border: 1px solid #dee2e6;
+      }
+
+      /* Style the table cells */
+      td {
+        border: 1px solid #dee2e6;
+        padding: 0.75rem;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Available Jobs</h1>
+    <form>
+        <table>
+        <thead>
+            <tr>
+            <th>Job title</th>
+            <th>Job description</th>
+            <th>Faculty</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+            <td>{{ job[0] }}</td>
+            <td>{{ job[1] }}</td>
+            <td>{{ job[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        <li><a href="/addjob">Add New Jobs</a></li>
+
+    </form>
+  </body>
+</html>

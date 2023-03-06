@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Job Details</title>
+    <style>
+      /* Style the form */
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: #555;
+      }
+
+      /* Style the form fields */
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+        margin-bottom: 1rem;
+      }
+
+      /* Style the submit button */
+      .submit-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Style the submit button on hover */
+      .submit-button:hover {
+        background-color: #3e8e41;
+      }
+      nav {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			margin-bottom: 20px;
+		}
+		nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		nav li {
+			float: left;
+		}
+		nav li a {
+			display: block;
+			color: #fff;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		nav li a:hover {
+			background-color: #555;
+		}
+    </style>
+  </head>
+  <body>
+    <h1>Edit Job Details</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="/selectedFile">Jobs</a></li>
+        <li><a href="/">Logout</a></li>
+      </ul>
+    </nav>
+    <form action="/selectedFile" method="POST">
+      <input type="text" name="Job_Title" value="{{ selected_job[0] }}">
+      <label for="Job_Description">Job Description</label>
+      <textarea id="Job_Description" name="Job_Description">{{ selected_job[1] }}</textarea>
+      <label for="Faculty">Faculty</label>
+      <input type="text" id="Faculty" name="Faculty" value="{{ selected_job[2] }}">
+      <button class="submit-button" type="submit">Update Job Details</button>
+    </form>
+  </body>
+</html>
